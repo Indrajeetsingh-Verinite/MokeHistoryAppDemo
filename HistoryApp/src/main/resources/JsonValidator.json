@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "attribute": {
+      "type": "object",
+      "properties": {
+        "categories": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "balance": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "amount": {
+                          "type": "number"
+                        },
+                        "applicableRate": {
+                          "type": "number"
+                        },
+                        "category": {
+                          "type": "string"
+                        },
+                        "interest": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "amount",
+                        "applicableRate",
+                        "category",
+                        "interest"
+                      ]
+                    }
+                  ]
+                },
+                "date": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "balance",
+                "date"
+              ]
+            }
+          ]
+        },
+        "ledgerId": {
+          "type": "string"
+        },
+        "statementId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "categories",
+        "ledgerId",
+        "statementId"
+      ]
+    },
+    "ifi": {
+      "type": "string"
+    },
+    "validfrom": {
+      "type": "string"
+    },
+    "validtill": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "attribute",
+    "ifi",
+    "validfrom",
+    "validtill",
+    "version"
+  ]
+}
